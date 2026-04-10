@@ -3,7 +3,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-String googleApiKey = '';
+const String googleApiKey =
+    String.fromEnvironment('GOOGLE_MAPS_API_KEY', defaultValue: '');
 
 const kPrimary = Color(0xFF30b9b2);
 const kPrimaryLight = Color(0xFF40F3EA);
@@ -18,7 +19,9 @@ const kDark = Color(0xff000000);
 const kRed = Color(0xffe81e4d);
 const kOffWhite = Color(0xffF3F4F8);
 
-double height = 926.h;
-double width = 428.w;
+double get height => 926.h;
+double get width => 428.w;
 
-const String appBaseUrl = 'https://f20b-196-115-8-128.ngrok-free.app';
+const String defaultAppBaseUrl = 'http://localhost:3000';
+const String appBaseUrl =
+    String.fromEnvironment('APP_BASE_URL', defaultValue: defaultAppBaseUrl);
